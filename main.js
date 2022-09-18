@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             gainNode[key].gain.setValueAtTime(gainNode[key].gain.value, audioCtx.currentTime); //begin at current value
             gainNode[key].gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.1); //ramp down
             gainNode[key].gain.setTargetAtTime(0, audioCtx.currentTime, 0.1)
-            activeOscillators[key].stop(audioCtx.currentTime + 0.1);
+            activeOscillators[key].stop(audioCtx.currentTime + 0.15);
             delete activeOscillators[key];
             delete gainNode[key];
         }
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         gain.gain.setValueAtTime(0, audioCtx.currentTime);
         osc.start();
         gain.gain.linearRampToValueAtTime(0.8, audioCtx.currentTime + 0.1); //ramp up
-        gain.gain.exponentialRampToValueAtTime(0.65, audioCtx.currentTime + 0.2); //decay down to sustain level
+        gain.gain.exponentialRampToValueAtTime(0.65, audioCtx.currentTime + 0.15); //decay down to sustain level
         activeOscillators[key] = osc
         gainNode[key] = gain;
      }
