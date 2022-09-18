@@ -70,15 +70,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const osc = audioCtx.createOscillator();
         osc.frequency.setValueAtTime(keyboardFrequencyMap[key], audioCtx.currentTime)
         osc.type = wave;
+
         const gain = audioCtx.createGain();
         osc.connect(gain);
         gain.connect(audioCtx.destination);
         gain.gain.setValueAtTime(0, audioCtx.currentTime);
         osc.start();
-        gain.gain.linearRampToValueAtTime(0.8, audioCtx.currentTime + 0.1); //ramp up
-        gain.gain.exponentialRampToValueAtTime(0.65, audioCtx.currentTime + 0.15); //decay down to sustain level
+
+        const nodeNum = Object.keys(key).length;
+        Object.keys(key).forEach(function(key) {
+            gain.gain.linearRampToValueAtTime(0.8/nodeNum, audioCtx.currentTime + 0.1); //ramp up
+            gain.gain.exponentialRampToValueAtTime(0.65/nodeNum, audioCtx.currentTime + 0.15); //decay down to sustain level
+        });
+
         activeOscillators[key] = osc
         gainNode[key] = gain;
      }
-  
-    })
+})
