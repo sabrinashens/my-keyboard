@@ -30,6 +30,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         '89': 880.000000000000000,  //Y - A
         '55': 932.327523036179832, //7 - A#
         '85': 987.766602512248223,  //U - B
+
+        /* extra keys for fun */
+        '73': 1046.50,//I - C
+        '79': 1174.66,//O - D
+        '80': 1318.51,//P - E
+        '65': 1396.91,//A - F
+        '70': 1567.98,//F - G
+        '76': 1760.00,//L - A
+        '32': 1975.53,//spacebar - B
     }
 
     window.addEventListener('keydown', keyDown, false);
