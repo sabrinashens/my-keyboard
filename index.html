@@ -5,7 +5,13 @@
   <script src="./main.js"></script>
 
   <style>
-    .exp {visibility: hidden;}
+    .n {visibility: hidden;}
+    .i {visibility: hidden;}
+    .c {visibility: hidden;}
+    .e {visibility: hidden;}
+    .d {visibility: hidden;}
+    .a {visibility: hidden;}
+    .y {visibility: hidden;}
   </style>
 
 </head>
@@ -21,27 +27,30 @@
       </form>
   </fieldset>
 
-  <button onclick="unhide()" style="display:none">H</button>
+  <button type="N" onclick="unhideN()" style="display:none">N</button>
+  <button type="I" onclick="unhideI()" style="display:none">I</button>
+  <button type="C" onclick="unhideC()" style="display:none">C</button>
+  <button type="E" onclick="unhideE()" style="display:none">E</button>
+  <button type="D" onclick="unhideD()" style="display:none">D</button>
+  <button type="A" onclick="unhideA()" style="display:none">A</button>
+  <button type="Y" onclick="unhideY()" style="display:none">Y</button>
 
-  <div class="exp">
-    <p class="and" style="font-size:400%">H</p>
-  </div>
+  <p></p>
+
+  <fieldset style = "margin:auto; width:32%; border:white">
+    <legend style="font-size:100%; text-align:center">Play as many notes as you can. See what comes after!</legend> 
+    <i class="n" style="font-size:500%">N</i>
+    <i class="i" style="font-size:500%">I</i>
+    <i class="c" style="font-size:500%">C</i>
+    <i class="e" style="font-size:500%">E</i>
+    <i class="n" style="font-size:500%; color:white">n</i>
+    <i class="d" style="font-size:500%">D</i>
+    <i class="a" style="font-size:500%">A</i>
+    <i class="y" style="font-size:500%">Y!</i>
+  </fieldset>
 </body>
 
-<script>
-  function unhide() {
-    var hid = document.getElementsByClassName("exp");
-    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
-      hid[0].style.visibility = "visible";
-    }
-  }
-    
-  document.addEventListener("keydown", function(event){
-    if(event.key === "h") {
-      document.querySelector("button").click();
-    } 
-  });
-</script>
+<script src = ".unhide.js"></script>
 
 </html>
 
