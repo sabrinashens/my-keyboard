@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <script src="./main.js"></script>
+
+  <style>
+    .exp {visibility: hidden;}
+  </style>
+
 </head>
 <body>
 
@@ -15,7 +20,29 @@
         <label for="sawtooth">sawtooth</label>    
       </form>
   </fieldset>
-  
+
+  <button onclick="unhide()" style="display:none">H</button>
+
+  <div class="exp">
+    <p class="and" style="font-size:400%">H</p>
+  </div>
 </body>
+
+<script>
+  function unhide() {
+    var hid = document.getElementsByClassName("exp");
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+      hid[0].style.visibility = "visible";
+    }
+  }
+    
+  document.addEventListener("keydown", function(event){
+    if(event.key === "h") {
+      document.querySelector("button").click();
+    } 
+  });
+</script>
+
 </html>
+
 
