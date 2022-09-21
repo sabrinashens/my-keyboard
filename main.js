@@ -33,12 +33,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         /* extra keys for fun */
         '73': 1046.50,//I - C
-        '79': 1174.66,//O - D
-        '80': 1318.51,//P - E
-        '65': 1396.91,//A - F
-        '70': 1567.98,//F - G
-        '76': 1760.00,//L - A
-        '32': 1975.53,//spacebar - B
+        '65': 1174.66,//A - D
     }
 
     window.addEventListener('keydown', keyDown, false);
@@ -86,13 +81,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         gain.gain.setValueAtTime(0, audioCtx.currentTime);
         osc.start();
 
-        const nodeNum = Object.keys(key).length;
-        Object.keys(key).forEach(function(key) {
+        const nodeNum = Object.keys(key).length; //number of notes pressed
+        Object.keys(key).forEach(function(key) { //lower amp
             gain.gain.linearRampToValueAtTime(0.8/nodeNum, audioCtx.currentTime + 0.1); //ramp up
-            gain.gain.exponentialRampToValueAtTime(0.65/nodeNum, audioCtx.currentTime + 0.15); //decay down to sustain level
+            gain.gain.exponentialRampToValueAtTime(0.75/nodeNum, audioCtx.currentTime + 0.2); //decay down to sustain level
         });
 
         activeOscillators[key] = osc
         gainNode[key] = gain;
      }
 })
+

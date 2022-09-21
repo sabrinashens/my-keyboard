@@ -3,30 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <script src="./main.js"></script>
+  <p style="font-size:200%; text-align:center; color:#F0FFFF; background-color: #5F9EA0">Try as many notes as you can. See what happens!</p> 
 
   <style>
+    .h {visibility: hidden;}
+    .v {visibility: hidden;}
     .n {visibility: hidden;}
     .i {visibility: hidden;}
     .c {visibility: hidden;}
     .e {visibility: hidden;}
+    .e1 {visibility: hidden;}
     .d {visibility: hidden;}
     .a {visibility: hidden;}
+    .a1 {visibility: hidden;}
+    .a2 {visibility: hidden;}
     .y {visibility: hidden;}
   </style>
 
 </head>
 <body>
 
-  <fieldset style="width:30%; margin:auto">
-  <legend style="font-size:100%; text-align:center">Please select a waveform</legend> 
-      <form id = "Waveforms">
-        <input type="radio" id="sine" name="waveform" value="sine" checked>
-        <label for="sine">sine</label><br>
-        <input type="radio" id="sawtooth" name="waveform" value="sawtooth">
-        <label for="sawtooth">sawtooth</label>    
-      </form>
-  </fieldset>
+  <fieldset style="width:15%; margin:auto;border:white;">
+    <form id = "Waveforms">
+      <input type="radio" id="sine" name="waveform" value="sine" checked>
+      <label for="sine">sine</label><br>
+      <input type="radio" id="sawtooth" name="waveform" value="sawtooth">
+      <label for="sawtooth">sawtooth</label>    
+    </form>
+</fieldset>
 
+  <button type="H" onclick="unhideH()" style="display:none">H</button>
+  <button type="A1" onclick="unhideA1()" style="display:none">A</button>
+  <button type="V" onclick="unhideV()" style="display:none">V</button>
+  <button type="E1" onclick="unhideE1()" style="display:none">E</button>
+  <button type="A2" onclick="unhideA2()" style="display:none">A</button>
   <button type="N" onclick="unhideN()" style="display:none">N</button>
   <button type="I" onclick="unhideI()" style="display:none">I</button>
   <button type="C" onclick="unhideC()" style="display:none">C</button>
@@ -34,24 +44,32 @@
   <button type="D" onclick="unhideD()" style="display:none">D</button>
   <button type="A" onclick="unhideA()" style="display:none">A</button>
   <button type="Y" onclick="unhideY()" style="display:none">Y</button>
-
+  
   <p></p>
 
-  <fieldset style = "margin:auto; width:32%; border:white">
-    <legend style="font-size:100%; text-align:center">Play as many notes as you can. See what comes after!</legend> 
-    <i class="n" style="font-size:500%">N</i>
-    <i class="i" style="font-size:500%">I</i>
-    <i class="c" style="font-size:500%">C</i>
-    <i class="e" style="font-size:500%">E</i>
-    <i class="n" style="font-size:500%; color:white">n</i>
-    <i class="d" style="font-size:500%">D</i>
-    <i class="a" style="font-size:500%">A</i>
-    <i class="y" style="font-size:500%">Y!</i>
+  <fieldset style = "margin:auto; width:78%; border:white;">
+    <i class="h" style="font-size:700%; color:#8B0000">H</i>
+    <i class="a1" style="font-size:700%; color:#FF6347">A</i>
+    <i class="v" style="font-size:700%; color:#AFEEEE">V</i>
+    <i class="e1" style="font-size:700%; color:#FFA07A">E</i>
+    <i class="no" style="font-size:700%; color:white">n</i>
+    <i class="a2" style="font-size:700%; color:#ADD8E6">A</i>
+    <i class="no" style="font-size:700%; color:white">n</i>
+    <i class="n" style="font-size:700%; color:#F08080">N</i>
+    <i class="i" style="font-size:700%; color:#8FBC8F">I</i>
+    <i class="c" style="font-size:700%; color:#D8BFD8">C</i>
+    <i class="e" style="font-size:700%; color:#87CEEB">E</i>
+    <i class="no" style="font-size:700%; color:white">n</i>
+    <i class="d" style="font-size:700%; color:#F4A460">D</i>
+    <i class="a" style="font-size:700%; color:#4169E1">A</i>
+    <i class="y" style="font-size:700%; color:#663399">Y!</i>
   </fieldset>
 </body>
 
-<script src = ".unhide.js"></script>
+<script src = "unhide.js"></script>
 
 </html>
+
+
 
 
